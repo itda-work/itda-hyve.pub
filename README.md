@@ -79,24 +79,6 @@ Cowork 에서 email / web-reader 스킬이 이 프로그램을 통해 동작합�
 
 **상태·로그** 탭의 감사 로그에 모든 호출이 시각·도구·대상·결과로 남습니다(본문·비밀번호는 기록되지 않음). 문의할 때 이 화면을 캡처해 보내면 빠릅니다.
 
-## itda-butler(0.8.x)에서 옮겨 오는 경우
-
-0.9.0 에서 이름이 **itda-butler → itda-hyve** 로 바뀌었습니다. 계정·API 키는 그대로 이어집니다.
-
-1. **Claude Desktop 을 완전히 종료**하고 옛 itda-butler 앱도 닫습니다. 옛 serve 가 살아 있으면 itda-hyve 는 데이터를 옮기지 않고 옛 폴더(`~/.itda/butler`)를 그대로 쓰며 그렇다고 알립니다. 옛 판이 모두 끝난 뒤 다시 열면 옮깁니다.
-2. itda-hyve 를 1단계대로 설치하고 엽니다. 이때 `~/.itda/butler` 의 설정·자격증명·감사 로그가 `~/.itda/hyve` 로 자동으로 옮겨집니다(열쇠 `~/.itda/master.key` 는 그대로).
-3. **Claude Desktop** 탭에서 **등록** 을 누릅니다. 옛 이름(`itda-butler`) 항목이 함께 지워집니다 — 두 이름이 함께 남으면 Claude 가 같은 도구를 두 번 봅니다. 그다음 Claude Desktop 을 엽니다. 화면 위에 "옛 폴더를 쓰는 중" 띠가 떠 있었다면 **itda-hyve 창도 닫았다가** Claude Desktop 을 연 뒤 다시 엽니다.
-4. 옛 앱(`/Applications/itda-butler.app`, Windows 는 옛 `itda-butler.exe`)을 지웁니다. 옛 앱을 다시 열면 옛 이름으로 다시 등록할 수 있으니 열지 마세요. `.mcpb` 로 설치했다면 Claude Desktop 설정의 확장 목록에서 옛 `itda-butler` 확장을 제거합니다(확장 이름이 달라 새 판이 덮어쓰지 않습니다).
-5. 스킬팩도 itda-hyve 이름을 쓰는 판으로 바꿉니다. 옛 스킬은 `itda-butler` 이름의 도구를 찾으므로 새 이름의 서버에서는 동작하지 않습니다.
-
-되돌리려면(0.8.x 로) 옛 앱을 열기 **전에** Claude Desktop 과 itda-hyve 를 끄고 `~/.itda/hyve` 폴더 이름을 `~/.itda/butler` 로 바꿉니다. 옮긴 뒤 itda-hyve 에서 바꾼 값도 함께 돌아갑니다.
-
-itda-hyve 가 "옛 itda-butler 가 실행 중" 이라고 알리면 Claude Desktop 과 옛 앱을 완전히 종료한 뒤 itda-hyve 를 다시 엽니다. **상태·로그** 탭의 프로세스 목록에 "옛 itda-butler" 로 표시된 것을 끝내도 됩니다. 그 사이에도 계정·키는 그대로 보이고, 바꾼 값은 옮길 때 함께 옮겨집니다(옛 폴더를 쓰는 창·serve 가 하나라도 떠 있으면 다른 쪽도 옮기지 않습니다).
-
-"옮기지 않은 항목이 남아 있다" 는 알림이 뜨면 `~/.itda/butler` 를 **지우지 마세요.** 원래 자격증명이 그쪽에 있을 수 있습니다. 두 폴더를 비교해 어느 쪽을 쓸지 정합니다.
-
-첨부 저장 폴더는 설정에 저장된 값을 그대로 씁니다(설정을 저장한 적이 있는 기존 사용자는 `~/Downloads/itda-butler`). 바꾸려면 설정 화면에서 고칩니다. 새로 설치하면 기본값은 `~/Downloads/itda-hyve` 입니다.
-
 ## 삭제
 
 1. **Claude Desktop** 탭 > **등록 해제** 를 누릅니다. 이 항목만 지워지고 다른 서버와 나머지 설정은 그대로 남으며, 지우기 전 백업을 만듭니다. (Aside 도 같은 화면에서 해제할 수 있습니다.)

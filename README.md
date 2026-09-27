@@ -27,10 +27,6 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 1. [릴리스 페이지](https://github.com/itda-work/itda-hyve.pub/releases/latest)에서 `itda-hyve-<버전>-windows-amd64.zip` 을 받아 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
 2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행".
 
-### .mcpb 로 설치하는 방법 (대안)
-
-`itda-hyve-<버전>-<플랫폼>.mcpb` 파일을 Claude Desktop 창에 끌어다 놓으면 MCP 서버 등록(아래 3단계)이 자동으로 됩니다. 계정 등록(2단계)은 여전히 GUI 에서 해야 하는데, Claude Desktop 의 확장 프로그램 폴더 안에 설치된 `itda-hyve` 실행 파일을 더블클릭하면 GUI 가 열립니다.
-
 ## 2. 계정 등록
 
 1. `itda-hyve` 를 실행합니다. 창이 하나 뜹니다. 처음 실행하면 `~/.itda/` 폴더와 열쇠 파일이 만들어집니다.

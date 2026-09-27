@@ -24,7 +24,7 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 
 ### Windows
 
-1. [릴리스 페이지](https://github.com/itda-work/itda-hyve.pub/releases/latest)에서 `itda-hyve-<버전>-windows-amd64.zip` 을 받아 압축을 풀고, `itda-hyve.exe` 를 예를 들어 `C:\Program Files\itda-hyve\` 에 둡니다. (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
+1. [릴리스 페이지](https://github.com/itda-work/itda-hyve.pub/releases/latest)에서 `itda-hyve-<버전>-windows-amd64.zip` 을 받아 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
 2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행".
 
 ### .mcpb 로 설치하는 방법 (대안)

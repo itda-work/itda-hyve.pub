@@ -18,13 +18,13 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 
 ### macOS
 
-1. [릴리스 페이지](https://github.com/itda-work/itda-hyve.pub/releases/latest)에서 `itda-hyve-<버전>-darwin-arm64.app.zip` (Apple Silicon) 또는 `-darwin-amd64.app.zip` (Intel) 을 받습니다. 어느 쪽인지 모르면 왼쪽 위  > 이 Mac 에 관하여 > 칩 항목을 봅니다.
+1. 내 Mac 에 맞는 파일을 받습니다 — [Apple Silicon(M1 이후)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-darwin-arm64.app.zip) 또는 [Intel](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-darwin-amd64.app.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 왼쪽 위  > 이 Mac 에 관하여 > 칩 항목을 봅니다(Apple M… 이면 Apple Silicon).
 2. 압축을 풀고 `itda-hyve.app` 을 **응용 프로그램** 폴더로 옮깁니다.
 3. 처음 열면 "Apple 이 … 악성 코드가 없음을 확인할 수 없습니다"(macOS 14 이하는 "확인되지 않은 개발자") 창이 뜹니다. **완료**(또는 취소)를 누른 뒤 시스템 설정 > 개인정보 보호 및 보안 > 아래쪽 **"그래도 열기"** → 암호 입력 → 다시 뜨는 창에서 **열기**. 한 번만 하면 됩니다.
 
 ### Windows
 
-1. [릴리스 페이지](https://github.com/itda-work/itda-hyve.pub/releases/latest)에서 `itda-hyve-<버전>-windows-amd64.zip` 을 받아 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
+1. [Windows 용 파일](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip)(늘 최신 판)을 받아 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
 2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행".
 
 ## 2. 계정 등록

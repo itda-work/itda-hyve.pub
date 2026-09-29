@@ -24,7 +24,7 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 
 ### Windows
 
-1. [Windows 용 파일](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip)(늘 최신 판)을 받아 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
+1. 내 PC 에 맞는 파일을 받습니다 — [Windows (Intel·AMD, 대부분의 PC)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip) 또는 [Windows on ARM (Snapdragon 등 ARM PC, Mac 의 Parallels)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-arm64.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 설정 > 시스템 > 정보 > **시스템 종류**를 봅니다("ARM 기반 프로세서" 면 ARM). 그래도 모르겠으면 첫 번째 파일을 받으세요 — ARM PC 에서도 돌아갑니다(조금 느릴 뿐입니다). 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
 2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행".
 
 ## 2. 계정 등록

@@ -16,7 +16,30 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 
 아직 코드 서명을 하지 않은 판이라 처음 열 때 macOS·Windows 가 경고합니다. 아래 방법으로 한 번만 넘기면 됩니다.
 
-### macOS
+### 한 줄 설치 (권장)
+
+**Windows** — 시작 메뉴에서 **PowerShell** 을 열고(관리자 권한 필요 없음) 붙여넣습니다:
+
+```powershell
+irm https://github.com/itda-work/itda-hyve.pub/releases/latest/download/install.ps1 | iex
+```
+
+PC 에 맞는 판(Intel·AMD 또는 ARM)을 골라 받고, `%LOCALAPPDATA%\Programs\itda-hyve` 에 두고, 시작 메뉴에 **itda-hyve** 바로가기를 만든 뒤 실행합니다. 받은 파일은 공개 Release 의 **서명 목록**(Ed25519 서명 — 스크립트에 든 공개키로 확인)과 크기·SHA-256 이 같아야 설치합니다. 다르면 지우고 멈춥니다. 다만 이 스크립트 자체는 GitHub 의 HTTPS 로만 받으므로, 스크립트를 믿는 근거는 "GitHub 의 itda-work/itda-hyve.pub 에서 왔다" 입니다(스크립트에는 따로 서명이 없습니다). 미리 읽어 보려면 주소를 브라우저로 열면 됩니다.
+
+- 이미 설치돼 있으면 새 판으로 바꿉니다. itda-hyve 가 떠 있으면 바꾸지 않고 멈추니(같은 판이면 그대로 둡니다) 알림 영역 아이콘 > **종료**, Claude Desktop 도 완전히 종료한 뒤 다시 실행하세요. 다른 설치 창이나 앱 안 업데이트가 같은 폴더를 바꾸는 중이면 잠시 기다렸다가 멈추니, 그쪽이 끝난 뒤 다시 실행하세요. 설정·저장한 값(`%UserProfile%\.itda`)은 건드리지 않습니다.
+- 판을 고르거나 설치 폴더를 바꾸려면: `& ([scriptblock]::Create((irm https://github.com/itda-work/itda-hyve.pub/releases/latest/download/install.ps1))) -Version 0.13.0 -InstallDir D:\Apps\itda-hyve` (`-Arch amd64|arm64` 로 판을 정할 수도 있습니다).
+- **Smart App Control** 이 켜진 PC(Windows 11 새로 설치한 PC 일부)는 코드 서명이 없는 지금 판의 실행을 막습니다. 스크립트가 막힌 것을 알아보고 까닭을 알려 줍니다. 회사·학교 PC 의 실행 정책도 같습니다.
+- 회사 PC 에서 PowerShell 스크립트 실행이 막혀 있으면 아래 "손으로 받기" 를 따르세요.
+
+**macOS** — [Homebrew](https://brew.sh) 를 이미 쓰고 있다면:
+
+```sh
+brew install --cask itda-work/tap/itda-hyve
+```
+
+응용 프로그램 폴더에 설치됩니다. 아직 Apple 공증 전이라 처음 열 때(그리고 새 판마다) 아래 "손으로 받기" 3번의 **"그래도 열기"** 를 한 번 합니다. 새 판은 itda-hyve 를 끝낸 뒤 `brew upgrade --cask itda-hyve` — itda-hyve 의 새 판 알림도 이 명령을 보여 줍니다. 전체 이름(`itda-work/tap/itda-hyve`)으로 설치해야 Homebrew 가 이 항목을 신뢰합니다(짧은 이름 `itda-hyve` 로 처음 설치하면 "untrusted tap" 으로 거절합니다).
+
+### 손으로 받기 — macOS
 
 1. 내 Mac 에 맞는 파일을 받습니다 — [Apple Silicon(M1 이후)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-darwin-arm64.app.zip) 또는 [Intel](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-darwin-amd64.app.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 왼쪽 위  > 이 Mac 에 관하여 > 칩 항목을 봅니다(Apple M… 이면 Apple Silicon).
 2. 압축을 풀고 `itda-hyve.app` 을 **응용 프로그램** 폴더로 옮깁니다.
@@ -31,10 +54,10 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 - **문서 창만 열기**: Spotlight(⌘Space)에서 "itda-hyve 문서" 를 칩니다. 빈 창에서 열기·새 문서·끌어다 놓기를 할 수 있습니다.
 - 따로 승인하지 않아도 됩니다. 위 3번에서 `itda-hyve.app` 을 "그래도 열기" 로 한 번 승인하면 안에 든 itda-hyve 문서도 함께 승인됩니다. 드물게 경고가 다시 뜨면 같은 방법으로 한 번 넘깁니다.
 
-### Windows
+### 손으로 받기 — Windows
 
 1. 내 PC 에 맞는 파일을 받습니다 — [Windows (Intel·AMD, 대부분의 PC)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip) 또는 [Windows on ARM (Snapdragon 등 ARM PC, Mac 의 Parallels)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-arm64.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 설정 > 시스템 > 정보 > **시스템 종류**를 봅니다("ARM 기반 프로세서" 면 ARM). 그래도 모르겠으면 첫 번째 파일을 받으세요 — ARM PC 에서도 돌아갑니다(조금 느릴 뿐입니다). 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
-2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행".
+2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행". 처음 실행하면 시작 메뉴에 **itda-hyve** 바로가기가 생깁니다(압축 파일 안·받은 파일 폴더에서 실행하면 만들지 않습니다. 지우면 다시 만들지 않습니다).
 
 #### 마크다운(md) 문서를 itda-hyve 문서로 열기 (Windows)
 
@@ -88,6 +111,8 @@ ChatGPT 앱의 로그인·설정은 itda-hyve 가 관리하지 않습니다. 설
 
 같은 카드 아래에는 **내 ChatGPT 계정의 사용량**(5시간·7일 한도의 사용률, 리셋까지 남은 시간, 무료 리셋 개수)이 보이고, 메뉴 막대(Windows 는 알림 영역)에도 **ChatGPT 앱 (내 계정)** 행으로 나옵니다. 등록하지 않아도 ChatGPT 앱에 로그인돼 있으면 보입니다. itda-hyve 는 ChatGPT 앱의 로그인 정보(`~/.codex/auth.json`)를 읽기만 하고 바꾸거나 갱신하지 않습니다 — "토큰이 만료됨" 이 뜨면 ChatGPT 앱을 한 번 열면 됩니다. 사용량 줄 아래 **자세히** 를 펼치면 받은 정보 전체(이메일·플랜·모델별 사용 가능 여부·크레딧 등)를 볼 수 있습니다 — 사용자·계정 ID 는 끝 4자만 보입니다. 에이전트 계정과 같은 ChatGPT 계정이면 메뉴 막대에는 그 에이전트 행 하나로 합쳐 보입니다. 보고 싶지 않으면 카드의 **ChatGPT 앱 사용량 보기** 를 끄세요(끄면 그 파일을 열지 않습니다).
 
+한도가 예정된 리셋 시각보다 일찍 풀리면(사용률이 갑자기 0 근처로 떨어지는 등) 그 창 줄에 **"예정보다 일찍 리셋됨 (감지 15:04, 예정이던 시각 18:00)"** 이 하루 동안 보입니다 — 에이전트 계정 사용량과 메뉴 막대에도 같습니다. 무료 리셋을 직접 쓴 것인지는 itda-hyve 가 알 수 없어 그렇게만 적습니다.
+
 ## 5. 사용
 
 Cowork 에서 email / web-reader 스킬이 이 프로그램을 통해 동작합니다. 예:
@@ -120,13 +145,17 @@ Cowork 가 **"Claude가 itda-hyve에서 … 을(를) 사용하려고 합니다"*
 
 **Windows**: 새 판이 나오면 알림 영역 메뉴·대시보드 위 줄에 알립니다. **설치…** 를 누르고 **지금 설치** 를 고르면 itda-hyve 가 새 판을 받아 서명을 확인한 뒤 같은 자리의 `itda-hyve.exe` 를 바꾸고 다시 엽니다(나중에·이 판 건너뛰기도 고를 수 있습니다). 끝나면 **Claude Desktop 을 다시 시작**하세요 — 그 전에 떠 있던 itda-hyve 는 옛 판으로 돕니다. 압축 파일 안·받은 파일 폴더에서 실행 중이면 그 자리는 바꾸지 않고 권장 위치(`%LOCALAPPDATA%\Programs\itda-hyve`)에 설치하자고 묻습니다(옮기면 **설정**(⚙) › 연결에서 다시 등록). 쓸 수 없는 폴더(`C:\Program Files` 등)에 두었다면 확인한 zip 을 받기 폴더에 두고 보여 주니 아래 손으로 바꾸는 방법을 따르세요.
 
+**macOS — Homebrew 로 설치했다면**: itda-hyve 를 끝낸 뒤(메뉴 막대 아이콘 > **종료**) 터미널에서 `brew upgrade --cask itda-hyve`. 새 판 알림에도 이 명령이 보입니다(메뉴 막대의 **새 판 … — Homebrew 로 업데이트…** 를 누르면 설정 › 정보에서 명령을 보여 줍니다). 손으로 받은 .app 으로 덮으면 Homebrew 가 모르는 판이 되니 이 명령을 쓰세요.
+
+**Windows — 한 줄 설치를 다시 실행해도 됩니다**: 위 PowerShell 명령은 최신 판으로 바꿉니다(itda-hyve·Claude Desktop 을 끝낸 뒤).
+
 **손으로 바꾸기(macOS, 또는 Windows 에서 자동으로 바꾸지 못했을 때)**: 떠 있는 itda-hyve 를 먼저 끝냅니다 — 메뉴 막대·알림 영역 아이콘 > **종료**(창을 닫는 것만으로는 끝나지 않습니다). Windows 는 끝내지 않으면 `itda-hyve.exe` 를 덮어쓸 수 없습니다. 그다음 같은 자리에 새 판을 두고 실행합니다.
 
 ## 삭제
 
 1. (Windows 에서 md 연결을 등록했다면) **설정**(⚙, 좌하단) › 일반 > md 파일 연결 > **해제**.
 1. **설정**(⚙, 좌하단) › **연결** > **등록 해제** 를 누릅니다. 이 항목만 지워지고 다른 서버와 나머지 설정은 그대로 남으며, 지우기 전 백업을 만듭니다. (Aside 도 같은 화면에서 해제할 수 있습니다.)
-2. **설정**(⚙, 좌하단) › 일반에서 **로그인 시 자동 실행** 을 켜 두었다면 끕니다(지우지 않으면 로그인마다 없는 앱을 부르는 등록이 남습니다). 그다음 앱을 끝내고(메뉴 막대·알림 영역 아이콘 > **종료**) 앱을 지웁니다. 설정 폴더 `~/.itda/hyve`(Windows `%UserProfile%\.itda\hyve`)를 지우면 저장된 값까지 사라집니다.
+2. **설정**(⚙, 좌하단) › 일반에서 **로그인 시 자동 실행** 을 켜 두었다면 끕니다(지우지 않으면 로그인마다 없는 앱을 부르는 등록이 남습니다). 그다음 앱을 끝내고(메뉴 막대·알림 영역 아이콘 > **종료**) 앱을 지웁니다. Windows 는 시작 메뉴의 **itda-hyve** 바로가기(`%APPDATA%\Microsoft\Windows\Start Menu\Programs\itda-hyve.lnk`)도 지웁니다. Homebrew 로 설치했다면 `brew uninstall --cask itda-hyve`(앱만 지웁니다 — `--zap` 은 아래 설정 폴더 `~/.itda/hyve` 까지 지우고 `~/.itda/master.key` 는 남깁니다). 설정 폴더 `~/.itda/hyve`(Windows `%UserProfile%\.itda\hyve`)를 지우면 저장된 값까지 사라집니다.
 3. `~/.itda/master.key` 는 다른 itda 프로그램도 함께 쓰는 열쇠입니다. **다른 itda 프로그램을 쓰고 있다면 지우지 마세요.** 지우면 그쪽에 저장된 값도 열리지 않습니다.
 
 ## 위치와 출처 표시

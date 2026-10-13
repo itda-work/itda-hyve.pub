@@ -50,8 +50,15 @@ PC 에 맞는 판(Intel·AMD 또는 ARM)을 골라 받고, `%LOCALAPPDATA%\Progr
 
 ### 손으로 받기 — Windows
 
-1. 내 PC 에 맞는 파일을 받습니다 — [Windows (Intel·AMD, 대부분의 PC)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip) 또는 [Windows on ARM (Snapdragon 등 ARM PC, Mac 의 Parallels)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-arm64.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 설정 > 시스템 > 정보 > **시스템 종류**를 봅니다("ARM 기반 프로세서" 면 ARM). 그래도 모르겠으면 첫 번째 파일을 받으세요 — ARM PC 에서도 돌아갑니다(조금 느릴 뿐입니다). 압축을 풀고, `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 둡니다(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다. `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다). (한 번 둔 뒤에는 옮기지 마세요. Claude Desktop 에 이 경로가 등록됩니다.)
-2. "Windows 의 PC 보호" 창이 나오면 "추가 정보" > "실행". 처음 실행하면 시작 메뉴에 **itda-hyve** 바로가기가 생깁니다(압축 파일 안·받은 파일 폴더에서 실행하면 만들지 않습니다. 지우면 다시 만들지 않습니다).
+1. 내 PC 에 맞는 파일을 받습니다 — [Windows (Intel·AMD, 대부분의 PC)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip) 또는 [Windows on ARM (Snapdragon 등 ARM PC, Mac 의 Parallels)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-arm64.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 설정 > 시스템 > 정보 > **시스템 종류**를 봅니다("ARM 기반 프로세서" 면 ARM). 그래도 모르겠으면 첫 번째 파일을 받으세요 — ARM PC 에서도 돌아갑니다(조금 느릴 뿐입니다).
+2. 받은 zip 을 탐색기에서 열고 안의 `itda-hyve.exe` 를 두 번 누릅니다. 압축을 풀지 않아도 됩니다.
+3. "Windows 의 PC 보호" 창이 나오면 **추가 정보** > **실행**.
+4. **"itda-hyve 를 이 PC 에 설치할까요?"** 창에서 **설치** 를 누릅니다. itda-hyve 가 스스로 `%LOCALAPPDATA%\Programs\itda-hyve` 에 설치되고(관리자 권한 필요 없음) 시작 메뉴에 **itda-hyve** 바로가기를 만든 뒤 열립니다. 받은 zip 은 지워도 됩니다. 다음부터는 시작 메뉴에서 엽니다(바로가기를 지우면 다시 만들지 않습니다).
+
+- **이미 설치돼 있으면**: 같은 판이면 설치된 itda-hyve 를 열고, 다른 판이면 "설치된 판 … 을 … 로 바꿀까요?" 를 묻습니다. 설치된 itda-hyve 가 떠 있으면 바꾸지 않으니 알림 영역 아이콘 > **종료** 한 뒤 zip 안의 `itda-hyve.exe` 를 다시 여세요. 바꾼 뒤에는 Claude Desktop 을 다시 시작하세요. 설정·저장한 값(`%UserProfile%\.itda`)은 그대로입니다.
+- **이번엔 그냥 실행** 을 고르면 설치하지 않고 그 자리에서 엽니다. 이때는 Claude Desktop·ChatGPT·Aside 등록과 해제, md 파일 연결, 로그인 시 자동 실행, 시작 메뉴 바로가기를 새로 하지도 고치지도 지우지도 않습니다 — 압축 파일 안의 exe 는 탐색기가 곧 지우고, 이미 해 둔 등록은 설치된 itda-hyve 를 가리키기 때문입니다. 누르면 까닭이 뜹니다. 묻는 창은 압축 파일 안·받은 파일 폴더에서 열 때마다 뜹니다.
+- **설치하지 못하면**(디스크 공간·보안 프로그램 등) 까닭을 보여 주고 그 자리에서 엽니다. 그때는 압축을 풀어 `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 두고 실행하세요(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다).
+- **다른 폴더에 두고 쓰려면** 압축을 풀어 원하는 폴더(예: `D:\Apps\itda-hyve`)에 두고 실행합니다 — 그 자리에서는 묻지 않습니다. 한 번 둔 뒤에는 옮기지 마세요(Claude Desktop 에 이 경로가 등록됩니다). `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다.
 
 #### 마크다운(md) 문서를 itda-hyve 문서로 열기 (Windows)
 

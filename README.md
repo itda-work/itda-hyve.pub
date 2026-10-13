@@ -31,13 +31,7 @@ PC 에 맞는 판(Intel·AMD 또는 ARM)을 골라 받고, `%LOCALAPPDATA%\Progr
 - **Smart App Control** 이 켜진 PC(Windows 11 새로 설치한 PC 일부)는 코드 서명이 없는 지금 판의 실행을 막습니다. 스크립트가 막힌 것을 알아보고 까닭을 알려 줍니다. 회사·학교 PC 의 실행 정책도 같습니다.
 - 회사 PC 에서 PowerShell 스크립트 실행이 막혀 있으면 아래 "손으로 받기" 를 따르세요.
 
-**macOS** — [Homebrew](https://brew.sh) 를 이미 쓰고 있다면:
-
-```sh
-brew install --cask itda-work/tap/itda-hyve
-```
-
-응용 프로그램 폴더에 설치됩니다. 아직 Apple 공증 전이라 처음 열 때(그리고 새 판마다) 아래 "손으로 받기" 3번의 **"그래도 열기"** 를 한 번 합니다. 새 판은 itda-hyve 를 끝낸 뒤 `brew upgrade --cask itda-hyve` — itda-hyve 의 새 판 알림도 이 명령을 보여 줍니다. 전체 이름(`itda-work/tap/itda-hyve`)으로 설치해야 Homebrew 가 이 항목을 신뢰합니다(짧은 이름 `itda-hyve` 로 처음 설치하면 "untrusted tap" 으로 거절합니다).
+**macOS** 는 아래 "손으로 받기" 로 설치합니다(받아서 응용 프로그램 폴더에 옮기면 끝).
 
 ### 손으로 받기 — macOS
 
@@ -145,7 +139,7 @@ Cowork 가 **"Claude가 itda-hyve에서 … 을(를) 사용하려고 합니다"*
 
 **Windows**: 새 판이 나오면 알림 영역 메뉴·대시보드 위 줄에 알립니다. **설치…** 를 누르고 **지금 설치** 를 고르면 itda-hyve 가 새 판을 받아 서명을 확인한 뒤 같은 자리의 `itda-hyve.exe` 를 바꾸고 다시 엽니다(나중에·이 판 건너뛰기도 고를 수 있습니다). 끝나면 **Claude Desktop 을 다시 시작**하세요 — 그 전에 떠 있던 itda-hyve 는 옛 판으로 돕니다. 압축 파일 안·받은 파일 폴더에서 실행 중이면 그 자리는 바꾸지 않고 권장 위치(`%LOCALAPPDATA%\Programs\itda-hyve`)에 설치하자고 묻습니다(옮기면 **설정**(⚙) › 연결에서 다시 등록). 쓸 수 없는 폴더(`C:\Program Files` 등)에 두었다면 확인한 zip 을 받기 폴더에 두고 보여 주니 아래 손으로 바꾸는 방법을 따르세요.
 
-**macOS — Homebrew 로 설치했다면**: itda-hyve 를 끝낸 뒤(메뉴 막대 아이콘 > **종료**) 터미널에서 `brew upgrade --cask itda-hyve`. 새 판 알림에도 이 명령이 보입니다(메뉴 막대의 **새 판 … — Homebrew 로 업데이트…** 를 누르면 설정 › 정보에서 명령을 보여 줍니다). 손으로 받은 .app 으로 덮으면 Homebrew 가 모르는 판이 되니 이 명령을 쓰세요.
+**macOS — 예전에 Homebrew 로 설치했다면**: 이제 Homebrew 로는 새 판이 나오지 않습니다. itda-hyve 를 끝낸 뒤(메뉴 막대 아이콘 > **종료**) 터미널에서 `brew uninstall --cask itda-hyve` 로 지우고, 위 "손으로 받기 — macOS" 대로 다시 설치하세요(설정·저장한 값은 그대로 남습니다). 새 판 알림(메뉴 막대의 **새 판 … — Homebrew 배포 멈춤, 지우고 다시 설치…** → 설정 › 정보)에도 같은 안내가 보입니다.
 
 **Windows — 한 줄 설치를 다시 실행해도 됩니다**: 위 PowerShell 명령은 최신 판으로 바꿉니다(itda-hyve·Claude Desktop 을 끝낸 뒤).
 
@@ -155,7 +149,7 @@ Cowork 가 **"Claude가 itda-hyve에서 … 을(를) 사용하려고 합니다"*
 
 1. (Windows 에서 md 연결을 등록했다면) **설정**(⚙, 좌하단) › 일반 > md 파일 연결 > **해제**.
 1. **설정**(⚙, 좌하단) › **연결** > **등록 해제** 를 누릅니다. 이 항목만 지워지고 다른 서버와 나머지 설정은 그대로 남으며, 지우기 전 백업을 만듭니다. (Aside 도 같은 화면에서 해제할 수 있습니다.)
-2. **설정**(⚙, 좌하단) › 일반에서 **로그인 시 자동 실행** 을 켜 두었다면 끕니다(지우지 않으면 로그인마다 없는 앱을 부르는 등록이 남습니다). 그다음 앱을 끝내고(메뉴 막대·알림 영역 아이콘 > **종료**) 앱을 지웁니다. Windows 는 시작 메뉴의 **itda-hyve** 바로가기(`%APPDATA%\Microsoft\Windows\Start Menu\Programs\itda-hyve.lnk`)도 지웁니다. Homebrew 로 설치했다면 `brew uninstall --cask itda-hyve`(앱만 지웁니다 — `--zap` 은 아래 설정 폴더 `~/.itda/hyve` 까지 지우고 `~/.itda/master.key` 는 남깁니다). 설정 폴더 `~/.itda/hyve`(Windows `%UserProfile%\.itda\hyve`)를 지우면 저장된 값까지 사라집니다.
+2. **설정**(⚙, 좌하단) › 일반에서 **로그인 시 자동 실행** 을 켜 두었다면 끕니다(지우지 않으면 로그인마다 없는 앱을 부르는 등록이 남습니다). 그다음 앱을 끝내고(메뉴 막대·알림 영역 아이콘 > **종료**) 앱을 지웁니다. Windows 는 시작 메뉴의 **itda-hyve** 바로가기(`%APPDATA%\Microsoft\Windows\Start Menu\Programs\itda-hyve.lnk`)도 지웁니다. 예전에 Homebrew 로 설치했다면 `brew uninstall --cask itda-hyve`(앱만 지웁니다 — `--zap` 은 아래 설정 폴더 `~/.itda/hyve` 까지 지우고 `~/.itda/master.key` 는 남깁니다). 설정 폴더 `~/.itda/hyve`(Windows `%UserProfile%\.itda\hyve`)를 지우면 저장된 값까지 사라집니다.
 3. `~/.itda/master.key` 는 다른 itda 프로그램도 함께 쓰는 열쇠입니다. **다른 itda 프로그램을 쓰고 있다면 지우지 마세요.** 지우면 그쪽에 저장된 값도 열리지 않습니다.
 
 ## 위치와 출처 표시

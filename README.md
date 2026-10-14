@@ -14,29 +14,14 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 
 ## 1. 설치
 
+설치 파일은 **[itda.work/hyve](https://itda.work/hyve/)** 의 **내려받기** 에서 받습니다. 누르면 늘 최신 판 압축 파일(zip)이 받아집니다. 받아서 두 번 누르면 끝이고, 명령을 입력할 일은 없습니다.
+
 아직 코드 서명을 하지 않은 판이라 처음 열 때 macOS·Windows 가 경고합니다. 아래 방법으로 한 번만 넘기면 됩니다.
 
-### 한 줄 설치 (권장)
+### macOS
 
-**Windows** — 시작 메뉴에서 **PowerShell** 을 열고(관리자 권한 필요 없음) 붙여넣습니다:
-
-```powershell
-irm https://github.com/itda-work/itda-hyve.pub/releases/latest/download/install.ps1 | iex
-```
-
-PC 에 맞는 판(Intel·AMD 또는 ARM)을 골라 받고, `%LOCALAPPDATA%\Programs\itda-hyve` 에 두고, 시작 메뉴에 **itda-hyve** 바로가기를 만든 뒤 실행합니다. 받은 파일은 공개 Release 의 **서명 목록**(Ed25519 서명 — 스크립트에 든 공개키로 확인)과 크기·SHA-256 이 같아야 설치합니다. 다르면 지우고 멈춥니다. 다만 이 스크립트 자체는 GitHub 의 HTTPS 로만 받으므로, 스크립트를 믿는 근거는 "GitHub 의 itda-work/itda-hyve.pub 에서 왔다" 입니다(스크립트에는 따로 서명이 없습니다). 미리 읽어 보려면 주소를 브라우저로 열면 됩니다.
-
-- 이미 설치돼 있으면 새 판으로 바꿉니다. itda-hyve 가 떠 있으면 바꾸지 않고 멈추니(같은 판이면 그대로 둡니다) 알림 영역 아이콘 > **종료**, Claude Desktop 도 완전히 종료한 뒤 다시 실행하세요. 다른 설치 창이나 앱 안 업데이트가 같은 폴더를 바꾸는 중이면 잠시 기다렸다가 멈추니, 그쪽이 끝난 뒤 다시 실행하세요. 설정·저장한 값(`%UserProfile%\.itda`)은 건드리지 않습니다.
-- 판을 고르거나 설치 폴더를 바꾸려면: `& ([scriptblock]::Create((irm https://github.com/itda-work/itda-hyve.pub/releases/latest/download/install.ps1))) -Version 0.13.0 -InstallDir D:\Apps\itda-hyve` (`-Arch amd64|arm64` 로 판을 정할 수도 있습니다).
-- **Smart App Control** 이 켜진 PC(Windows 11 새로 설치한 PC 일부)는 코드 서명이 없는 지금 판의 실행을 막습니다. 스크립트가 막힌 것을 알아보고 까닭을 알려 줍니다. 회사·학교 PC 의 실행 정책도 같습니다.
-- 회사 PC 에서 PowerShell 스크립트 실행이 막혀 있으면 아래 "손으로 받기" 를 따르세요.
-
-**macOS** 는 아래 "손으로 받기" 로 설치합니다(받아서 응용 프로그램 폴더에 옮기면 끝).
-
-### 손으로 받기 — macOS
-
-1. 내 Mac 에 맞는 파일을 받습니다 — [Apple Silicon(M1 이후)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-darwin-arm64.app.zip) 또는 [Intel](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-darwin-amd64.app.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 왼쪽 위  > 이 Mac 에 관하여 > 칩 항목을 봅니다(Apple M… 이면 Apple Silicon).
-2. 압축을 풀고 `itda-hyve.app` 을 **응용 프로그램** 폴더로 옮깁니다.
+1. [itda.work/hyve](https://itda.work/hyve/) 의 **내려받기** 에서 내 Mac 에 맞는 파일을 받습니다 — **macOS (Apple Silicon)**(M1 이후) 또는 **macOS (Intel)**. 어느 쪽인지 모르면 왼쪽 위  > 이 Mac 에 관하여 > 칩 항목을 봅니다(Apple M… 이면 Apple Silicon).
+2. 받은 zip 을 두 번 눌러 풉니다(Safari 는 받으면서 저절로 풀기도 합니다). 나온 `itda-hyve.app` 을 Finder 왼쪽의 **응용 프로그램** 폴더로 끌어다 놓습니다.
 3. 처음 열면 "Apple 이 … 악성 코드가 없음을 확인할 수 없습니다"(macOS 14 이하는 "확인되지 않은 개발자") 창이 뜹니다. **완료**(또는 취소)를 누른 뒤 시스템 설정 > 개인정보 보호 및 보안 > 아래쪽 **"그래도 열기"** → 암호 입력 → 다시 뜨는 창에서 **열기**. 한 번만 하면 됩니다.
 
 #### 마크다운(md) 문서를 itda-hyve 문서로 열기 (macOS)
@@ -48,9 +33,9 @@ PC 에 맞는 판(Intel·AMD 또는 ARM)을 골라 받고, `%LOCALAPPDATA%\Progr
 - **문서 창만 열기**: Spotlight(⌘Space)에서 "itda-hyve 문서" 를 칩니다. 빈 창에서 열기·새 문서·끌어다 놓기를 할 수 있습니다.
 - 따로 승인하지 않아도 됩니다. 위 3번에서 `itda-hyve.app` 을 "그래도 열기" 로 한 번 승인하면 안에 든 itda-hyve 문서도 함께 승인됩니다. 드물게 경고가 다시 뜨면 같은 방법으로 한 번 넘깁니다.
 
-### 손으로 받기 — Windows
+### Windows
 
-1. 내 PC 에 맞는 파일을 받습니다 — [Windows (Intel·AMD, 대부분의 PC)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-amd64.zip) 또는 [Windows on ARM (Snapdragon 등 ARM PC, Mac 의 Parallels)](https://github.com/itda-work/itda-hyve.pub/releases/latest/download/itda-hyve-windows-arm64.zip). 늘 최신 판이 받아집니다. 어느 쪽인지 모르면 설정 > 시스템 > 정보 > **시스템 종류**를 봅니다("ARM 기반 프로세서" 면 ARM). 그래도 모르겠으면 첫 번째 파일을 받으세요 — ARM PC 에서도 돌아갑니다(조금 느릴 뿐입니다).
+1. [itda.work/hyve](https://itda.work/hyve/) 의 **내려받기** 에서 내 PC 에 맞는 파일을 받습니다 — **Windows (Intel·AMD)**(대부분의 PC) 또는 **Windows on ARM**(Snapdragon 등 ARM PC, Mac 의 Parallels). 어느 쪽인지 모르면 설정 > 시스템 > 정보 > **시스템 종류**를 봅니다("ARM 기반 프로세서" 면 ARM). 그래도 모르겠으면 첫 번째 파일을 받으세요 — ARM PC 에서도 돌아갑니다(조금 느릴 뿐입니다).
 2. 받은 zip 을 탐색기에서 열고 안의 `itda-hyve.exe` 를 두 번 누릅니다. 압축을 풀지 않아도 됩니다.
 3. "Windows 의 PC 보호" 창이 나오면 **추가 정보** > **실행**.
 4. **"itda-hyve 를 이 PC 에 설치할까요?"** 창에서 **설치** 를 누릅니다. itda-hyve 가 스스로 `%LOCALAPPDATA%\Programs\itda-hyve` 에 설치되고(관리자 권한 필요 없음) 시작 메뉴에 **itda-hyve** 바로가기를 만든 뒤 열립니다. 받은 zip 은 지워도 됩니다. 다음부터는 시작 메뉴에서 엽니다(바로가기를 지우면 다시 만들지 않습니다).
@@ -59,6 +44,7 @@ PC 에 맞는 판(Intel·AMD 또는 ARM)을 골라 받고, `%LOCALAPPDATA%\Progr
 - **이번엔 그냥 실행** 을 고르면 설치하지 않고 그 자리에서 엽니다. 이때는 Claude Desktop·ChatGPT·Aside 등록과 해제, md 파일 연결, 로그인 시 자동 실행, 시작 메뉴 바로가기를 새로 하지도 고치지도 지우지도 않습니다 — 압축 파일 안의 exe 는 탐색기가 곧 지우고, 이미 해 둔 등록은 설치된 itda-hyve 를 가리키기 때문입니다. 누르면 까닭이 뜹니다. 묻는 창은 압축 파일 안·받은 파일 폴더에서 열 때마다 뜹니다.
 - **설치하지 못하면**(디스크 공간·보안 프로그램 등) 까닭을 보여 주고 그 자리에서 엽니다. 그때는 압축을 풀어 `itda-hyve.exe` 를 `%LOCALAPPDATA%\Programs\itda-hyve\` 에 두고 실행하세요(탐색기 주소창에 `%LOCALAPPDATA%\Programs` 를 입력하면 열립니다).
 - **다른 폴더에 두고 쓰려면** 압축을 풀어 원하는 폴더(예: `D:\Apps\itda-hyve`)에 두고 실행합니다 — 그 자리에서는 묻지 않습니다. 한 번 둔 뒤에는 옮기지 마세요(Claude Desktop 에 이 경로가 등록됩니다). `C:\Program Files` 는 관리자 권한이 필요해 회사 PC 에서 막히기 쉽습니다.
+- **Smart App Control** 이 켜진 PC(Windows 11 을 새로 설치한 PC 일부)는 코드 서명이 없는 지금 판의 실행을 막습니다. 회사·학교 PC 의 실행 정책도 같습니다. 이런 PC 에서는 지금 판을 열 수 없습니다.
 
 #### 마크다운(md) 문서를 itda-hyve 문서로 열기 (Windows)
 
@@ -144,13 +130,13 @@ Cowork 가 **"Claude가 itda-hyve에서 … 을(를) 사용하려고 합니다"*
 
 ## 새 판으로 바꾸기
 
-**Windows**: 새 판이 나오면 알림 영역 메뉴·대시보드 위 줄에 알립니다. **설치…** 를 누르고 **지금 설치** 를 고르면 itda-hyve 가 새 판을 받아 서명을 확인한 뒤 같은 자리의 `itda-hyve.exe` 를 바꾸고 다시 엽니다(나중에·이 판 건너뛰기도 고를 수 있습니다). 끝나면 **Claude Desktop 을 다시 시작**하세요 — 그 전에 떠 있던 itda-hyve 는 옛 판으로 돕니다. 압축 파일 안·받은 파일 폴더에서 실행 중이면 그 자리는 바꾸지 않고 권장 위치(`%LOCALAPPDATA%\Programs\itda-hyve`)에 설치하자고 묻습니다(옮기면 **설정**(⚙) › 연결에서 다시 등록). 쓸 수 없는 폴더(`C:\Program Files` 등)에 두었다면 확인한 zip 을 받기 폴더에 두고 보여 주니 아래 손으로 바꾸는 방법을 따르세요.
+**저절로 바뀝니다(Windows·macOS)**: 새 판이 나오면 itda-hyve 가 받아서 서명을 확인한 뒤, 바꾸기 10초 전에 대시보드 위 줄과 메뉴 막대(알림 영역)에 "새 판으로 바꿉니다" 를 알리고 잠깐 닫혔다 새 판으로 다시 열립니다. 서두르면 **지금 바꾸기**, 지금은 곤란하면 **나중에**(다음에 itda-hyve 를 열 때 다시 합니다)를 누르세요. 문서 창에 저장하지 않은 글이 있거나 Claude 가 itda-hyve 를 쓰는 중이면 끝날 때까지 기다립니다. 바꾼 뒤에는 **Claude Desktop 을 다시 시작**하세요 — 그 전에 떠 있던 연결은 옛 판으로 계속 돕니다. 기다리지 않고 바로 바꾸려면 대시보드 줄의 **지금 설치…** 를 누르세요. 수업 등으로 판을 고정해야 하면 **설정**(⚙) › 정보에서 "새 판 확인" 을 끄세요 — 끄면 묻지도 바꾸지도 않습니다.
+- Windows: 압축 파일 안·받은 파일 폴더에서 실행 중이면 그 자리는 바꾸지 않고 권장 위치(`%LOCALAPPDATA%\Programs\itda-hyve`)에 설치하자고 묻습니다(옮기면 **설정**(⚙) › 연결에서 다시 등록). 쓸 수 없는 폴더(`C:\Program Files` 등)에 두었다면 확인한 zip 을 다운로드 폴더에 두고 탐색기로 보여 주니 아래 손으로 바꾸는 방법을 따르세요.
+- macOS: 다운로드 폴더에서 바로 연 앱은 처음 열 때 "응용 프로그램 폴더로 옮길까요?" 를 묻습니다 — 옮겨야 저절로 바뀝니다. 응용 프로그램 폴더에 쓸 권한이 없으면(관리자가 앱을 둔 Mac) 저절로 바꾸지 않고, 확인한 zip 을 다운로드 폴더에 두고 Finder 로 보여 줍니다(아래 손으로 바꾸기). 새 판으로 바뀐 뒤 날씨·주변 검색에서 위치 권한을 한 번 더 물으면 다시 **허용**하세요(아직 Apple 공증 서명이 없어 판마다 다른 앱으로 봅니다).
 
-**macOS — 예전에 Homebrew 로 설치했다면**: 이제 Homebrew 로는 새 판이 나오지 않습니다. itda-hyve 를 끝낸 뒤(메뉴 막대 아이콘 > **종료**) 터미널에서 `brew uninstall --cask itda-hyve` 로 지우고, 위 "손으로 받기 — macOS" 대로 다시 설치하세요(설정·저장한 값은 그대로 남습니다). 새 판 알림(메뉴 막대의 **새 판 … — Homebrew 배포 멈춤, 지우고 다시 설치…** → 설정 › 정보)에도 같은 안내가 보입니다.
+**macOS — 예전에 Homebrew 로 설치했다면**: 이제 Homebrew 로는 새 판이 나오지 않습니다. itda-hyve 를 끝낸 뒤(메뉴 막대 아이콘 > **종료**) 터미널에서 `brew uninstall --cask itda-hyve` 로 지우고, 위 1장의 "macOS" 대로 다시 설치하세요(설정·저장한 값은 그대로 남습니다). 새 판 알림(메뉴 막대의 **새 판 … — Homebrew 배포 멈춤, 지우고 다시 설치…** → 설정 › 정보)에도 같은 안내가 보입니다.
 
-**Windows — 한 줄 설치를 다시 실행해도 됩니다**: 위 PowerShell 명령은 최신 판으로 바꿉니다(itda-hyve·Claude Desktop 을 끝낸 뒤).
-
-**손으로 바꾸기(macOS, 또는 Windows 에서 자동으로 바꾸지 못했을 때)**: 떠 있는 itda-hyve 를 먼저 끝냅니다 — 메뉴 막대·알림 영역 아이콘 > **종료**(창을 닫는 것만으로는 끝나지 않습니다). Windows 는 끝내지 않으면 `itda-hyve.exe` 를 덮어쓸 수 없습니다. 그다음 같은 자리에 새 판을 두고 실행합니다.
+**손으로 바꾸기(자동으로 바꾸지 못했을 때)**: itda-hyve 가 다운로드 폴더에 둔 zip 을 쓰거나, 그것이 없으면 [itda.work/hyve](https://itda.work/hyve/) 의 **내려받기** 에서 받습니다. 떠 있는 itda-hyve 를 먼저 끝냅니다 — 메뉴 막대·알림 영역 아이콘 > **종료**(창을 닫는 것만으로는 끝나지 않습니다). Windows 는 끝내지 않으면 `itda-hyve.exe` 를 덮어쓸 수 없습니다. 그다음 macOS 는 zip 을 두 번 눌러 푼 `itda-hyve.app` 을 응용 프로그램 폴더에 끌어다 놓아 바꾸고(같은 이름이 있다고 물으면 **대치**), Windows 는 zip 안의 `itda-hyve.exe` 를 두 번 눌러 "설치된 판 … 을 … 로 바꿀까요?" 에서 바꿉니다(다른 폴더에 두고 쓰면 같은 자리에 새 판을 두고 실행합니다).
 
 ## 삭제
 

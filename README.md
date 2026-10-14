@@ -14,14 +14,14 @@ Claude Desktop(Cowork) 이 내 PC 의 네트워크로 웹을 읽고 메일을 �
 
 ## 1. 설치
 
-설치 파일은 **[itda.work/hyve](https://itda.work/hyve/)** 의 **내려받기** 에서 받습니다. 누르면 늘 최신 판 압축 파일(zip)이 받아집니다. 받아서 두 번 누르면 끝이고, 명령을 입력할 일은 없습니다.
+설치 파일은 **[itda.work/hyve](https://itda.work/hyve/)** 의 **내려받기** 에서 받습니다. 누르면 늘 최신 판 설치 파일(macOS 는 디스크 이미지 dmg, Windows 는 압축 파일 zip)이 받아집니다. 받아서 두 번 누르면 끝이고, 명령을 입력할 일은 없습니다.
 
 아직 코드 서명을 하지 않은 판이라 처음 열 때 macOS·Windows 가 경고합니다. 아래 방법으로 한 번만 넘기면 됩니다.
 
 ### macOS
 
 1. [itda.work/hyve](https://itda.work/hyve/) 의 **내려받기** 에서 내 Mac 에 맞는 파일을 받습니다 — **macOS (Apple Silicon)**(M1 이후) 또는 **macOS (Intel)**. 어느 쪽인지 모르면 왼쪽 위  > 이 Mac 에 관하여 > 칩 항목을 봅니다(Apple M… 이면 Apple Silicon).
-2. 받은 zip 을 두 번 눌러 풉니다(Safari 는 받으면서 저절로 풀기도 합니다). 나온 `itda-hyve.app` 을 Finder 왼쪽의 **응용 프로그램** 폴더로 끌어다 놓습니다.
+2. 받은 dmg 파일을 두 번 눌러 엽니다. 나온 창에서 `itda-hyve` 를 같은 창의 **Applications**(응용 프로그램) 폴더로 끌어다 놓습니다. 다 옮겼으면 Finder 왼쪽 위치 목록의 itda-hyve 디스크를 꺼냅니다. 받은 dmg 파일은 지워도 됩니다. 디스크 이미지 창 안에서 바로 열면 "응용 프로그램 폴더로 옮길까요?" 를 묻습니다 — 옮겨서 쓰세요.
 3. 처음 열면 "Apple 이 … 악성 코드가 없음을 확인할 수 없습니다"(macOS 14 이하는 "확인되지 않은 개발자") 창이 뜹니다. **완료**(또는 취소)를 누른 뒤 시스템 설정 > 개인정보 보호 및 보안 > 아래쪽 **"그래도 열기"** → 암호 입력 → 다시 뜨는 창에서 **열기**. 한 번만 하면 됩니다.
 
 #### 마크다운(md) 문서를 itda-hyve 문서로 열기 (macOS)
@@ -136,7 +136,7 @@ Cowork 가 **"Claude가 itda-hyve에서 … 을(를) 사용하려고 합니다"*
 
 **macOS — 예전에 Homebrew 로 설치했다면**: 이제 Homebrew 로는 새 판이 나오지 않습니다. itda-hyve 를 끝낸 뒤(메뉴 막대 아이콘 > **종료**) 터미널에서 `brew uninstall --cask itda-hyve` 로 지우고, 위 1장의 "macOS" 대로 다시 설치하세요(설정·저장한 값은 그대로 남습니다). 새 판 알림(메뉴 막대의 **새 판 … — Homebrew 배포 멈춤, 지우고 다시 설치…** → 설정 › 정보)에도 같은 안내가 보입니다.
 
-**손으로 바꾸기(자동으로 바꾸지 못했을 때)**: itda-hyve 가 다운로드 폴더에 둔 zip 을 쓰거나, 그것이 없으면 [itda.work/hyve](https://itda.work/hyve/) 의 **내려받기** 에서 받습니다. 떠 있는 itda-hyve 를 먼저 끝냅니다 — 메뉴 막대·알림 영역 아이콘 > **종료**(창을 닫는 것만으로는 끝나지 않습니다). Windows 는 끝내지 않으면 `itda-hyve.exe` 를 덮어쓸 수 없습니다. 그다음 macOS 는 zip 을 두 번 눌러 푼 `itda-hyve.app` 을 응용 프로그램 폴더에 끌어다 놓아 바꾸고(같은 이름이 있다고 물으면 **대치**), Windows 는 zip 안의 `itda-hyve.exe` 를 두 번 눌러 "설치된 판 … 을 … 로 바꿀까요?" 에서 바꿉니다(다른 폴더에 두고 쓰면 같은 자리에 새 판을 두고 실행합니다).
+**손으로 바꾸기(자동으로 바꾸지 못했을 때)**: itda-hyve 가 다운로드 폴더에 둔 zip 을 쓰거나, 그것이 없으면 [itda.work/hyve](https://itda.work/hyve/) 의 **내려받기** 에서 받습니다. 떠 있는 itda-hyve 를 먼저 끝냅니다 — 메뉴 막대·알림 영역 아이콘 > **종료**(창을 닫는 것만으로는 끝나지 않습니다). Windows 는 끝내지 않으면 `itda-hyve.exe` 를 덮어쓸 수 없습니다. 그다음 macOS 는 받은 dmg 를 열어 `itda-hyve` 를 **Applications** 폴더로, itda-hyve 가 둔 zip 이면 두 번 눌러 푼 `itda-hyve.app` 을 응용 프로그램 폴더로 끌어다 놓아 바꾸고(같은 이름이 있다고 물으면 **대치**), Windows 는 zip 안의 `itda-hyve.exe` 를 두 번 눌러 "설치된 판 … 을 … 로 바꿀까요?" 에서 바꿉니다(다른 폴더에 두고 쓰면 같은 자리에 새 판을 두고 실행합니다).
 
 ## 삭제
 

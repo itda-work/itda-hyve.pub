@@ -24,7 +24,11 @@ It is not open source software.
 
 4. Third-party components. The Software includes third-party components
    (such as Go libraries and the Pretendard font) that are licensed under
-   their own terms. Those terms govern those components.
+   their own terms. Those terms govern those components. The region
+   boundary data used to determine the current city/district is derived
+   from Statistics Korea SGIS administrative boundaries (KOGL Type 1) and
+   vuski/admdongkor (CC BY 4.0), merged to city/district level and
+   simplified.
 
 5. Termination. This license ends automatically if you breach it. On
    termination you must stop using and delete the Software.
